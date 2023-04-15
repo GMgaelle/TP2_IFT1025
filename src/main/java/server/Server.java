@@ -15,14 +15,6 @@ import java.util.Arrays;
  * plateforme d'inscription et execute les requetes demandees par ceux-ci (and more...)
  * 
  * @author gaelle
- * 
- * @param REGISTER_COMMAND : Var String
- * @param LOAD_COMMAND : Var String
- * @param server : objet socket servant a ouvrir une connexion S/C
- * @param client : objet socket servant a ouvrir une connexion C/S
- * @param objectInputStream : donnee recue du serveur
- * @param objectOutputStream : donnee envoyee au serveur
- * @param handlers : gestion de la liste d'attente (clients)
  */
 
 public class Server {
@@ -35,6 +27,11 @@ public class Server {
     private ObjectOutputStream objectOutputStream;
     private final ArrayList<EventHandler> handlers;
 
+    /**
+     * Constructeur blablabla
+     * @param port
+     * @throws IOException
+     */
     public Server(int port) throws IOException {
         this.server = new ServerSocket(port, 1); //creation d'un S avec port d'entree + waitlist client
         this.handlers = new ArrayList<EventHandler>();
@@ -55,6 +52,7 @@ public class Server {
      * 
      * @param cmd : info1 client (IP?)
      * @param arg : info2 client (Port?)
+     * @
      */
     private void alertHandlers(String cmd, String arg) {
         for (EventHandler h : this.handlers) {
@@ -68,9 +66,7 @@ public class Server {
      * de sortie pour communiquer avec les clients, appelle une méthode "listen()" 
      * pour écouter les messages du client et y répondre, puis ferme la connexion 
      * avec le client en appelant la méthode "disconnect()".
-     * 
-     * @param objectInputStream : flux d'entree du socket du client
-     * @param objectOutputStream : flux de sortie du socket du client
+     *
      */
     public void run() {
         while (true) {
@@ -158,6 +154,7 @@ public class Server {
      @param arg la session pour laquelle on veut récupérer la liste des cours
      */
     public void handleLoadCourses(String arg) {
+        System.out.println("Nous sommes dans la fonction a modifier");
         // TODO: implémenter cette méthode
     }
 
@@ -167,6 +164,7 @@ public class Server {
      La méthode gére les exceptions si une erreur se produit lors de la lecture de l'objet, l'écriture dans un fichier ou dans le flux de sortie.
      */
     public void handleRegistration() {
+        System.out.println("Nous sommes dans la fonction a modifier2");
         // TODO: implémenter cette méthode
     }
 }

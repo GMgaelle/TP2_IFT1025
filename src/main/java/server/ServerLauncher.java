@@ -4,8 +4,7 @@ package server;
  * la classe "ServerLauncher" est utilisé pour lancer le 
  * serveur en créant une instance de la classe "Server" 
  * et en appelant sa méthode "run()".
- * 
- * @param PORT : port d'entree du serveur
+ *
  */
 public class ServerLauncher {
     public final static int PORT = 1337;
